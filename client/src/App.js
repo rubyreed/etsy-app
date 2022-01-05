@@ -7,6 +7,7 @@ import RequireAuth from "./components/RequireAuth";
 import Register from "./pages/Register";
 import Login from "./pages/Login";
 import NavBar from "./pages/NavBar";
+import Products_With_Seller from './components/Products_With_Seller';
 
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/public" element={<Public />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/products" element={<Products_With_Seller/>}/>
         <Route element={<RequireAuth />}>
           {/* protected routes go here */}
           <Route path="/" element={<Home />} />
