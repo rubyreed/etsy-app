@@ -3,11 +3,11 @@
 one:
   name: MyString
   max_price: 1.5
-  desired_categories: MyText
+  categories: MyText
   seller: one
 
 two:
   name: MyString
   max_price: 1.5
-  desired_categories: MyText
+  categories: MyText
   seller: two

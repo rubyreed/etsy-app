@@ -39,7 +39,7 @@ categories = [
     price = Faker::Commerce.price(range: 1..1000.0)
     p = Product.create(
       price: price,
-      desired_category: categories.sample,
+      category: categories.sample,
       description: Faker::Hipster.sentence,
       seller_id: s.id
   )

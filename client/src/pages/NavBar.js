@@ -35,6 +35,9 @@ const NavBar = () => {
         <Link style={{color:"white"}} to="/products">Products</Link>
         </Menu.Item>
         <Menu.Item>
+        <Link style={{color:"white"}} to="/categories">Categories</Link>
+        </Menu.Item>
+        <Menu.Item>
         {renderAuthLinks()}
         </Menu.Item>
       <Container>
