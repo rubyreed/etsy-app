@@ -9,7 +9,7 @@
 
 # User.create(email: 'test@test.com', password: 123456)
 
-desired_categories = [
+categories = [
   'Jewelery',
   'Bags',
   'Ceramics',
@@ -26,20 +26,20 @@ desired_categories = [
   )
 
   5.times do
-    num_desired_categories = rand(0..desired_categories.length - 1);
+    num_categories = rand(0..categories.length - 1);
     Buyer.create(
       name: Faker::Name.name,
-      max_price: rand(1..150000),
-      desired_categories: desired_categories.sample(num_desired_categories),
+      max_price: rand(1..1000),
+      categories: categories.sample(num_categories),
       seller_id: s.id
     )
   end
   
   5.times do
-    price = rand(99000..1500000)
+    price = Faker::Commerce.price(range: 1..1000.0)
     p = Product.create(
       price: price,
-      category: desired_categories.sample,
+      desired_category: categories.sample,
       description: Faker::Hipster.sentence,
       seller_id: s.id
   )

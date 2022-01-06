@@ -1,7 +1,8 @@
 import React, {useContext} from "react";
 import {Link, Outlet, useNavigate} from "react-router-dom";
 import {AuthContext} from "../providers/AuthProvider";
-import { Container, Menu } from "semantic-ui-react";
+import { Container, Menu, Image, Button } from "semantic-ui-react";
+import shoplogo from "../images/shoplogo.jpg";
 
 
 
@@ -11,29 +12,29 @@ const NavBar = () => {
   const { authenticated, handleLogout } = useContext(AuthContext);
   const renderAuthLinks = () => {
     if (authenticated) {
-      return <button onClick={() => handleLogout(nav)}>Logout</button>;
+      return <Button style={{backgroundColor:"aqua", color:"grey"}} onClick={() => handleLogout(nav)}>Logout</Button>;
     }
   return (
-    <Menu>
+    <Menu style={{backgroundColor:"aqua"}}>
       <Menu.Item>
-         <Link to="/register">Register</Link>
+         <Link style={{color:"grey"}} to="/register">Register</Link>
       </Menu.Item>
       <Menu.Item>
-       <Link to="/login">Login</Link>
+       <Link style={{color:"grey"}} to="/login">Login</Link>
        </Menu.Item>
     </Menu>
     )
   }
     return(
-      <Menu>
+      <Menu style={{backgroundColor:"lightGrey"}}>
+        <Image style={{width:"72px"}} src={shoplogo} alt="Ruby's Shop logo"/>
         <Menu.Item>
-        <Link to="/">Home</Link>
+        <Link style={{color:"white"}} to="/">Home</Link>
         </Menu.Item>
         <Menu.Item>
-        <Link to="/public">Public</Link>
+        <Link style={{color:"white"}} to="/products">Products</Link>
         </Menu.Item>
         <Menu.Item>
-        <Link to="/protected">Protected</Link>
         {renderAuthLinks()}
         </Menu.Item>
       <Container>
