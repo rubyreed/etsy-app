@@ -8,6 +8,7 @@ import NavBar from "./pages/NavBar";
 import ProductsWithSeller from "./pages/ProductsWithSeller";
 import Protected from "./pages/Protected";
 import Categories from "./pages/Categories";
+import FindProduct from "./pages/FindProduct";
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<ProductsWithSeller/>}/>
         <Route path="/categories" element={<Categories/>}/>
+        <Route path="/findproduct" element={<FindProduct/>}/>
         <Route element={<RequireAuth />}>
           {/* protected routes go here */}
           <Route path="/protected" element={<Protected />} />

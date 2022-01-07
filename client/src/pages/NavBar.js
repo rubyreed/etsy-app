@@ -32,8 +32,11 @@ const NavBar = () => {
         <Link style={{color:"white"}} to="/">Home</Link>
         </Menu.Item>
         <Menu.Item>
-        <Link style={{color:"white"}} to="/products">Products</Link>
+        <Link style={{color:"white"}} to="/findproduct">Find a Product</Link>
         </Menu.Item>
+        <Menu.Item>
+        <Link style={{color:"white"}} to="/products">Products</Link>
+        </Menu.Item>        
         <Menu.Item>
         <Link style={{color:"white"}} to="/categories">Categories</Link>
         </Menu.Item>

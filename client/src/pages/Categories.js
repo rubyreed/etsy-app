@@ -1,8 +1,12 @@
-import React, {useState, useEffect} from "react";
-import { Header, Table, Divider, Container, Card } from "semantic-ui-react";
+import React, {useState, useEffect, useContext} from "react";
+import { Header, Table, Divider, Container, Card, Image, Button } from "semantic-ui-react";
 import axios from "axios";
+import { AuthContext } from "../providers/AuthProvider";
+import { Link } from "react-router-dom";
+import categoriesimage from "../images/Categories.jpg";
 
 const Categories = () => {
+  const {authenticated} = useContext(AuthContext);
 const [categories, setCategories] = useState([]);
 
 useEffect(() => {
@@ -75,6 +79,8 @@ const renderRow = (data) => {
     </Table.Row> )
   })
 }
+
+if (authenticated) {
   return (
     <Container>
     <Header as='h1' style={{marginBottom:'50px', marginTop:'30px'}}>Categories</Header>
@@ -82,6 +88,15 @@ const renderRow = (data) => {
     </Container>
   )
 }
-
+return (
+  <Container>
+  <Image className="productsImage" src={categoriesimage} alt="Ruby's categories" fluid/>
+  <Header style={{margin:"50px", fontSize:"30px", textAlign:"right"}}>...would be here if you logged in!</Header>
+  <Header style={{margin:"50px", fontSize:"30px", textAlign:"right"}}>
+       <Button as={Link} to="/login" variant="text">Log In</Button> - or - <Button as={Link} to="/register" variant="text">Register</Button>
+  </Header>
+  </Container>
+)
+}
 export default Categories;
 

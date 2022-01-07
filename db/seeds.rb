@@ -30,7 +30,7 @@ categories = [
     Buyer.create(
       name: Faker::Name.name,
       max_price: rand(1..1000),
-      categories: categories.sample(num_categories),
+      desired_categories: categories.sample(num_categories),
       seller_id: s.id
     )
   end
