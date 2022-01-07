@@ -15,4 +15,12 @@ class Product < ApplicationRecord
     .order('s.id')
   end
 
+# SELECT products.id, price, category, description 
+# FROM products
+# ORDER BY category
+
+def self.category
+select('products.id, price, category, description')
+.order('category')
+end
 end
