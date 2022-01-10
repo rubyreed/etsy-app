@@ -23,4 +23,5 @@ def self.category
 select('products.id, price, category, description')
 .order('category')
 end
+
 end

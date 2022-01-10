@@ -5,4 +5,7 @@ class Api::ProductsController < ApplicationController
   def category
     render json: Product.category
   end 
+  def selectshow
+    render json: Seller.by_buyer(params[:id])
+  end
 end
